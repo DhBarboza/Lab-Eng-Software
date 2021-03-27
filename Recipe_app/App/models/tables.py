@@ -23,3 +23,25 @@ class User(db.Model):
 
 class Post(db.Model):
     __tablename__ = 'posts'
+     id = db.Column(db.Integer, primary_key=True)
+     content = db.Column(db.Text)
+     user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
+
+     owner = db.relationship('User', foreign_Keys=user_id)
+
+     def __init__(self, content, user_id):
+         self.content = content
+         self.user_id = user_id
+
+    def __repr__(self):
+        return "<Post %r>" % self.id
+
+class Follow(db.Model):
+    __tablename__ = "follow"
+
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
+    follower_id = db.Column(db.Integer, db.ForeignKey('users.id'))
+
+    owner = db.relationship('User', foreign_Keys=user_id)
+    follower = de.relationship('User', foreign_Keys=follower_id)

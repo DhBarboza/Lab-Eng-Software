@@ -11,4 +11,4 @@
     pip3 install -r requeriments.txt
 
 ### Executar:
-    python3 run.py
+     python3 run.py runserver
