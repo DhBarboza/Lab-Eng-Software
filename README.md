@@ -8,12 +8,12 @@ Contendo a possibilidade de gerencia-las e manipular ingredientes pré-cadastrad
 O sistema é estruturado seguindo a arquitetura MVC.
 
 ## Tecnologias Usadas:
-- Linguagem de Programação Python (versão 3.8)
-- SQLAlchemy para persistência de dados
+- Linguagem de Programação Python (versão 3.9)
+- SQLAlchemy para ORM (mapeamento de objeto relacional)
 - Jinja 2 para geração de templates
 - Framework Flask
 
-## Para executar a aplicação siga as recomendações no arquivo `README.md` da pasta `Revenue_app`
+## Para executar a aplicação siga as recomendações no arquivo `README.md` da pasta `app`
 
-### Vídeo explicativo primeira entrega:
-[Protótipo Navegável](https://www.youtube.com/watch?v=Um5umjsCG5k)
+### Vídeo explicativo persistencia de dados e ORM:
+[ORM-SQLAlchemy & Python & MySQL](https://www.youtube.com/watch?v=EO_Uk05mK9I)
