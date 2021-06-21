@@ -1,5 +1,14 @@
 from Src import db
 
+class Ingredientes(db.Model):
+    __tablename__ = "ingredientes"
+
+    id = db.Column('id', db.Integer, primary_key=True, autoincrement=True)
+    title = db.Column(db.Text)
+
+    def __init__(self, title, ingrediente_id):
+        self.title = title
+
 class Receitas(db.Model):
     __tablename__ = "receitas"
 
@@ -13,11 +22,3 @@ class Receitas(db.Model):
         self.receita = receita
         self.ingrediente_id = ingrediente_id
 
-class Ingredientes(db.Model):
-    __tablename__ = "ingredientes"
-
-    id = db.Column('id', db.Integer, primary_key=True, autoincrement=True)
-    title = db.Column(db.Text)
-
-    def __init__(self, title, ingrediente_id):
-        self.title = title
