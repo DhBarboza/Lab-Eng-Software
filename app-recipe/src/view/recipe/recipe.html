@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <title>Receitas</title>
+
+    {% block css %}
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='recipe/recipe.css') }}">
+    {% endblock %}
+
+    {% block js %}
+    <script src="{{ url_for('static', filename='recipe/recipe.js') }}"></script>
+    {% endblock %}}
+</head>
+<body>
+{% include 'header/header.html' %}
+
+<main class="container">
+    <div class="row">
+        <div class="col-12" style="display: flex; align-items: center; justify-content: space-between;">
+            <h1>{{ title }}</h1>
+            <a class="btn btn-primary" href="{{ url_for('recipe.create_recipe') }}">Criar receita</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="card-wrapper">
+                {% if recipes %}
+                    {% for recipe in recipes %}
+                        <div class="card" id="recipe_{{recipe.id}}">
+                            <div class="card-title">
+                                <h4>{{ recipe.name }}</h4>
+                            </div>
+                            <div class="card-content">
+                                <div class="ingredients">
+                                    <h5>Ingredientes</h5>
+                                    {% for ingredient in recipe.ingredients %}
+                                        <p>{{ingredient.name}}</p>
+                                    {% endfor %}
+                                </div>
+
+                                <div class="preparation">
+                                    <h5>Preparação</h5>
+                                    <p>{{ recipe.steps }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</main>
+
+{% include 'footer/footer.html' %}
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <title>{{ title }}</title>
+
+    {% block css %}
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='dashboard/dashboard.css') }}">
+    {%  endblock %}
+</head>
+<body>
+    {% include 'header/header.html' %}
+
+    <main class="container">
+        <div class="row">
+            <div class="col-12" style="display: flex; justify-content: space-between; align-items: center;">
+                <h1>Receitas</h1>
+                <a class="btn btn-primary" href="/recipes">Gerenciar receitas</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="card-wrapper">
+                    {% if data.recipes %}
+                        {% for recipe in data.recipes %}
+                            <div class="card">
+                                <div class="card-title">
+                                    <h4>{{ recipe.name }}</h4>
+                                </div>
+                                <div class="card-content">
+                                    <div class="ingredients">
+                                        <h5>Ingredientes</h5>
+                                        {% for ingredient in recipe.ingredients %}
+                                        <p>{{ingredient.name}}</p>
+                                        {% endfor %}
+                                    </div>
+
+                                    <div class="preparation">
+                                        <h5>Preparação</h5>
+                                        <p>{{ recipe.steps }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12" style="display: flex; justify-content: space-between; align-items: center;">
+                <h1>Ingredientes</h1>
+                <a class="btn btn-primary" href="/ingredients">Gerenciar ingredientes</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                {% if data.ingredients %}
+                    {% for ingredient in data.ingredients %}
+                        <span class="label label-colorful">{{ ingredient.name }}</span>
+                    {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+    </main>
+
+    {% include 'footer/footer.html' %}
+</body>
+</html>
