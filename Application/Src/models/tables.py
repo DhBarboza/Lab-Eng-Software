@@ -4,10 +4,10 @@ class Ingredientes(db.Model):
     __tablename__ = "ingredientes"
 
     id = db.Column('id', db.Integer, primary_key=True, autoincrement=True)
-    title = db.Column(db.Text)
+    ingrediente_name = db.Column(db.String(1000))
 
-    def __init__(self, title, ingrediente_id):
-        self.title = title
+    def __init__(self, ingrediente_name):
+        self.ingrediente_name = ingrediente_name
 
 class Receitas(db.Model):
     __tablename__ = "receitas"

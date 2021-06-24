@@ -8,4 +8,5 @@ app.config.from_object('config')
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
+from Src.models import tables
 from Src.controllers import engine
