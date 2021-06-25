@@ -33,7 +33,7 @@ cd App-recipe
 
 ### Configuração do banco de dados:
 - !Configure as credenciais de acordo com seu ambiente de de banco de dados MySQL!
-- Configure a conexão com o MySQL no arquivo `.env` localizado na raiz do projeto:
+- Configure a conexão com o MySQL no arquivo `.env` cria-lo na raiz do projeto:
 
 - Database => Nome do banco de Dados
 - Host => localhost || 127.0.0.1
@@ -41,11 +41,15 @@ cd App-recipe
 - Username => Nome de usuário do server 
 - Password => A senha do seu servidor
 
+
+#### Exemplo:
+```
 MYSQL_DATABASE=cook
 MYSQL_HOST=localhost
 MYSQL_PORT=3306 
 MYSQL_USERNAME=root 
 MYSQL_PASSWORD=
+```
 
 ### Criando schema e tabelas
 - rode um seu terminal o seguinte comando:
