@@ -13,7 +13,7 @@ O sistema é estruturado seguindo a arquitetura MVC.
 - Jinja 2 para geração de templates
 - Framework Flask
 
-## Para executar a aplicação siga as recomendações no arquivo `README.md` da pasta `app`
+## Para executar a aplicação siga as recomendações no arquivo `README.md` da pasta `app-recipe`
 
 ### Vídeo explicativo persistencia de dados e ORM (Entrega 2):
 [ORM-SQLAlchemy & Python & MySQL](https://www.youtube.com/watch?v=EO_Uk05mK9I)
