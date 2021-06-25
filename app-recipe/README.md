@@ -8,8 +8,8 @@
 
 ### Clonar e atualizar repositório
 
-git clone https://github.com/DhBarboza/Lab-Eng-Software.git
-cd App-recipe
+- git clone https://github.com/DhBarboza/Lab-Eng-Software.git
+- cd App-recipe
 
 
 ### Instalando virtualenv
