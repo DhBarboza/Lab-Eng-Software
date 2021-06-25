@@ -15,5 +15,8 @@ O sistema é estruturado seguindo a arquitetura MVC.
 
 ## Para executar a aplicação siga as recomendações no arquivo `README.md` da pasta `app`
 
-### Vídeo explicativo persistencia de dados e ORM:
+### Vídeo explicativo persistencia de dados e ORM (Entrega 2):
 [ORM-SQLAlchemy & Python & MySQL](https://www.youtube.com/watch?v=EO_Uk05mK9I)
+
+### Vídeo explicativo do Sistema com Build e configurações (Ultima entrega):
+[Sistema - Build & Configurações](https://www.youtube.com/watch?v=dvlTRBLXBfo)
